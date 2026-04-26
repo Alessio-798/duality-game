@@ -70,18 +70,18 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 #overlay::-webkit-scrollbar{display:none}
 #overlay::before,#overlay::after{content:'';flex:1;min-height:8px}
 #ov-title{font-size:clamp(46px,8vw,96px);letter-spacing:clamp(6px,1.6vw,18px);background:linear-gradient(130deg,#00cfff 0%,#ffffff 48%,#ff00aa 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-align:center;line-height:1.1;filter:drop-shadow(0 0 28px rgba(0,207,255,.7)) drop-shadow(0 0 55px rgba(255,0,170,.45))}
-#ov-sub{font-size:clamp(12px,1.2vw,15px);letter-spacing:6px;color:rgba(255,255,255,.38);text-align:center;margin-top:2px}
-#ov-headphones{font-size:clamp(12px,1.2vw,14px);letter-spacing:2px;color:rgba(255,255,255,.45);text-align:center;border:1px solid rgba(255,255,255,.1);padding:6px 16px;background:rgba(255,255,255,.03)}
+#ov-sub{font-size:clamp(14px,1.4vw,17px);letter-spacing:6px;color:rgba(255,255,255,.72);text-align:center;margin-top:-8px}
+#ov-headphones{font-size:clamp(14px,1.4vw,17px);letter-spacing:2px;color:rgba(255,255,255,.75);text-align:center;border:1px solid rgba(255,255,255,.18);padding:6px 16px;background:rgba(255,255,255,.03)}
 #ov-panels{display:flex;gap:12px;width:100%;max-width:720px}
 .ov-panel{flex:1;border:1px solid;padding:12px 16px}
 #ov-panel-you{border-color:rgba(0,207,255,.45);background:rgba(0,207,255,.04)}
 #ov-panel-echo{border-color:rgba(255,0,170,.45);background:rgba(255,0,170,.04)}
-.ov-panel-head{font-size:clamp(11px,1.2vw,14px);letter-spacing:4px;margin-bottom:6px;font-weight:bold}
+.ov-panel-head{font-size:clamp(14px,1.4vw,17px);letter-spacing:4px;margin-bottom:6px;font-weight:bold}
 #ov-panel-you .ov-panel-head{color:#00cfff}
 #ov-panel-echo .ov-panel-head{color:#ff00aa}
-.ov-panel-body{font-size:clamp(12px,1.2vw,15px);color:rgba(255,255,255,.88);line-height:1.6;letter-spacing:.3px}
+.ov-panel-body{font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,.92);line-height:1.6;letter-spacing:.3px}
 #ov-extras{max-width:720px;width:100%;border:1px solid rgba(255,255,255,.12);padding:10px 16px}
-.ov-extra-row{display:flex;align-items:baseline;gap:12px;font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.82);letter-spacing:.5px;line-height:1.45}
+.ov-extra-row{display:flex;align-items:baseline;gap:12px;font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,.90);letter-spacing:.5px;line-height:1.45}
 .ov-extra-row+.ov-extra-row{margin-top:6px}
 /* All badges: fixed width so descriptions align perfectly */
 .ov-badge{display:inline-block;width:76px;text-align:center;font-size:clamp(10px,1vw,12px);letter-spacing:2px;padding:3px 0;border-radius:2px;flex-shrink:0;white-space:nowrap;line-height:1.5;font-weight:bold}
@@ -92,14 +92,14 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .ov-badge.red{background:rgba(255,50,0,.12);color:#ff7744;border:1px solid rgba(255,60,0,.28)}
 .ov-badge.cyan{background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.2)}
 #username-wrap{width:100%;max-width:720px;text-align:center}
-#username-wrap label{display:block;font-size:clamp(11px,1.1vw,14px);letter-spacing:5px;color:rgba(255,255,255,.5);margin-bottom:6px}
+#username-wrap label{display:block;font-size:clamp(13px,1.3vw,16px);letter-spacing:5px;color:rgba(255,255,255,.80);margin-bottom:6px}
 #username-input{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.25);color:#fff;font-family:'Courier New',monospace;font-size:clamp(16px,1.9vw,24px);letter-spacing:5px;padding:4px 8px;outline:none;text-align:center;width:260px;transition:border-color .2s;text-transform:uppercase}
 #username-input:focus{border-bottom-color:rgba(0,207,255,.7)}
 #username-input::placeholder{color:rgba(255,255,255,.2);font-size:.7em;letter-spacing:3px;text-transform:none}
 #ov-hs{font-size:clamp(12px,1.3vw,16px);letter-spacing:4px;color:rgba(255,204,0,.7)}
 .ov-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:#ffffff;font-family:'Courier New',monospace;font-size:clamp(14px,1.5vw,20px);letter-spacing:7px;padding:13px 44px;cursor:pointer;transition:all .25s;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .ov-btn:hover{border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.06);letter-spacing:8px}
-#ov-hint{font-size:clamp(11px,1.1vw,14px);letter-spacing:1px;color:rgba(255,255,255,.42);text-align:center;line-height:2}
+#ov-hint{font-size:clamp(13px,1.3vw,16px);letter-spacing:1px;color:rgba(255,255,255,.72);text-align:center;line-height:2}
 @media(max-width:600px){#ov-panels{flex-direction:column}}
 
 /* ── GAME OVER ── */
@@ -121,19 +121,19 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 #lives-wrap{display:flex;gap:5px;justify-content:center;margin-top:5px;pointer-events:none}
 .life-heart{font-size:clamp(15px,1.7vw,20px);transition:opacity .35s,transform .35s;text-shadow:0 0 8px rgba(255,60,60,.8)}
 .life-heart.lost{opacity:.14;transform:scale(.65)}
-#hud-streak-wrap{font-size:clamp(20px,2.4vw,30px);letter-spacing:2px;color:#ffdd00;text-shadow:0 0 14px rgba(255,220,0,.9);margin-top:4px;text-align:center;line-height:1;transition:transform .15s,text-shadow .3s;font-weight:bold}
+#hud-streak-wrap{display:flex;flex-direction:column;align-items:center;margin-top:4px;text-align:center;line-height:1;transition:transform .15s,text-shadow .3s}
 #hud-streak-wrap.streak-pulse{animation:streakPop .35s ease-out}
 @keyframes streakPop{0%{transform:scale(1.6)}100%{transform:scale(1)}}
-#hud-streak-label{font-size:clamp(10px,1.1vw,13px);letter-spacing:4px;color:rgba(255,200,0,.7);vertical-align:middle;font-weight:normal}
+#val-streak{font-size:clamp(24px,3vw,38px);letter-spacing:2px;color:#ffdd00;text-shadow:0 0 14px rgba(255,220,0,.9);font-weight:bold;line-height:1}
+#hud-streak-label{font-size:clamp(10px,1.1vw,12px);letter-spacing:4px;color:rgba(255,200,0,.75);font-weight:normal;margin-top:2px}
 .hud-next-pts{display:none}
 
 /* ── D-PAD ── */
-#dpad{position:fixed;bottom:max(28px,env(safe-area-inset-bottom,0px) + 16px);left:max(28px,env(safe-area-inset-left,0px) + 16px);display:none;flex-direction:column;align-items:center;gap:5px;z-index:50}
-.dp-row{display:flex;gap:5px;align-items:center}
 .dp-btn{width:62px;height:62px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);font-size:22px;display:flex;align-items:center;justify-content:center;border-radius:8px;cursor:pointer;touch-action:none;-webkit-tap-highlight-color:transparent;user-select:none;transition:background .08s,border-color .08s}
 .dp-btn.active,.dp-btn:active{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5)}
-.dp-center{width:62px;height:62px}
-@media(pointer:coarse){#dpad{display:flex}}
+#dpad-lr{position:fixed;bottom:max(28px,env(safe-area-inset-bottom,0px) + 16px);left:max(28px,env(safe-area-inset-left,0px) + 16px);display:none;flex-direction:row;gap:5px;z-index:50}
+#dpad-ud{position:fixed;bottom:max(28px,env(safe-area-inset-bottom,0px) + 16px);right:max(28px,env(safe-area-inset-right,0px) + 16px);display:none;flex-direction:column;gap:5px;z-index:50}
+@media(pointer:coarse){#dpad-lr{display:flex}#dpad-ud{display:flex}}
 /* ── PORTRAIT WARNING ── */
 #portrait-warn{position:fixed;inset:0;z-index:999;background:#010112;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;padding:40px;pointer-events:none}
 #portrait-icon{font-size:56px;animation:rotHint 2.4s ease-in-out infinite}
@@ -146,11 +146,11 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 <body>
 
 <div id="hud">
-  <div id="hud-you"><em>YOU</em><span id="val-score">0</span><div class="hud-pb">BEST &nbsp;<span id="val-pb">0</span></div></div>
+  <div id="hud-you"><em>YOU</em><span id="val-score">0</span><div class="hud-pb">BEST<br><span id="val-pb">0</span></div></div>
   <div id="hud-center">
     <div id="hud-dim">DIM <span id="val-level">1</span></div>
     <div id="hud-mode">MIRROR X</div>
-    <div id="hud-streak-wrap"><span id="hud-streak-label">SCORE ×</span><span id="val-streak">1</span></div>
+    <div id="hud-streak-wrap"><span id="val-streak">×1</span><span id="hud-streak-label">STREAK</span></div>
     <div id="lives-wrap"></div>
   </div>
   <div id="hud-echo"><em>ECHO</em></div>
@@ -190,7 +190,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
   <div id="ov-panels">
     <div class="ov-panel" id="ov-panel-you">
       <div class="ov-panel-head">YOU — LEFT DIMENSION</div>
-      <div class="ov-panel-body">The pulsing cyan entity.<br>Desktop: WASD or arrows<br>Mobile: drag anywhere</div>
+      <div class="ov-panel-body">The pulsing cyan entity.<br>PC: WASD / arrow keys <span style="font-size:.75em;letter-spacing:2px;background:rgba(0,207,255,.15);color:#00cfff;border:1px solid rgba(0,207,255,.35);padding:1px 6px;border-radius:2px;vertical-align:middle">RECOMMENDED</span><br>Mobile: d-pad buttons</div>
     </div>
     <div class="ov-panel" id="ov-panel-echo">
       <div class="ov-panel-head">ECHO — RIGHT DIMENSION</div>
@@ -217,13 +217,12 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
   <button class="ov-btn" id="retry-btn">TRY AGAIN</button>
 </div>
 
-<div id="dpad">
+<div id="dpad-lr">
+  <button class="dp-btn" id="dpad-l">◀</button>
+  <button class="dp-btn" id="dpad-r">▶</button>
+</div>
+<div id="dpad-ud">
   <button class="dp-btn" id="dpad-u">▲</button>
-  <div class="dp-row">
-    <button class="dp-btn" id="dpad-l">◀</button>
-    <div class="dp-center"></div>
-    <button class="dp-btn" id="dpad-r">▶</button>
-  </div>
   <button class="dp-btn" id="dpad-d">▼</button>
 </div>
 <div id="portrait-warn">
@@ -587,85 +586,45 @@ const discR=new THREE.Mesh(new THREE.CircleGeometry(.62,24),
 discR.rotation.x=-Math.PI/2;discR.position.y=.018;scene.add(discR);
 
 // ═══ PLAYERS ══════════════════════════════════════════════════════════════════
-function makePlayer(col,em,isYou){
+function makePlayer(col,em){
   const g=new THREE.Group();
-  if(isYou){
-    // YOU — radiant sphere: round, warm, unmistakably the protagonist
-    const body=new THREE.Mesh(new THREE.SphereGeometry(.54,24,24),
-      new THREE.MeshLambertMaterial({color:0xffffff,emissive:col,emissiveIntensity:3.5}));
-    g.add(body);
-    const mid=new THREE.Mesh(new THREE.SphereGeometry(.88,14,14),
-      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.35,transparent:true,opacity:.18}));
-    g.add(mid);
-    const glow=new THREE.Mesh(new THREE.SphereGeometry(1.32,12,12),
-      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.2,transparent:true,opacity:.12}));
-    g.add(glow);
-    const core=new THREE.Mesh(new THREE.SphereGeometry(.22,10,10),
-      new THREE.MeshLambertMaterial({color:0xffffff,emissive:0xffffff,emissiveIntensity:5}));
-    g.add(core);
-    const oct=new THREE.Mesh(new THREE.OctahedronGeometry(.25,0),
-      new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:5}));
-    g.add(oct);
-    // Wide dominant equatorial ring — YOU's signature
-    const r1=new THREE.Mesh(new THREE.TorusGeometry(.86,.075,8,56),
-      new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:3.2}));
-    r1.rotation.x=Math.PI/2;g.add(r1);
-    const r2=new THREE.Mesh(new THREE.TorusGeometry(.72,.034,6,44),
-      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.8,transparent:true,opacity:.82}));
-    r2.rotation.x=Math.PI/5;g.add(r2);
-    const r3=new THREE.Mesh(new THREE.TorusGeometry(.62,.022,6,36),
-      new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:1.5,transparent:true,opacity:.6}));
-    r3.rotation.x=-Math.PI/3;r3.rotation.z=Math.PI/4;g.add(r3);
-    const beam=new THREE.Mesh(new THREE.CylinderGeometry(.03,.2,7,6),
-      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:2.2,transparent:true,opacity:.3}));
-    beam.position.y=3.8;g.add(beam);
-    const cage=new THREE.Mesh(new THREE.IcosahedronGeometry(1.62,0),
-      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.1,wireframe:true,transparent:true,opacity:.16}));
-    g.add(cage);
-    g.add(new THREE.PointLight(col,12,16));g.add(new THREE.PointLight(col,4.5,6));
-    g.position.y=.45;scene.add(g);
-    return{g,glow,mid,body,oct,r1,r2,r3,beam,cage};
-  } else {
-    // ECHO — angular crystal: octahedron body, clearly ≠ YOU's soft sphere
-    const body=new THREE.Mesh(new THREE.OctahedronGeometry(.58,0),
-      new THREE.MeshLambertMaterial({color:0xffffff,emissive:col,emissiveIntensity:2.8}));
-    g.add(body);
-    // Translucent outer octahedron shell
-    const mid=new THREE.Mesh(new THREE.OctahedronGeometry(.96,0),
-      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.18,transparent:true,opacity:.1}));
-    g.add(mid);
-    const glow=new THREE.Mesh(new THREE.SphereGeometry(1.12,10,10),
-      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.15,transparent:true,opacity:.09}));
-    g.add(glow);
-    // oct points to body (the octahedron) — animations spin it
-    const oct=body;
-    const core=new THREE.Mesh(new THREE.SphereGeometry(.18,8,8),
-      new THREE.MeshLambertMaterial({color:0xffffff,emissive:col,emissiveIntensity:5}));
-    g.add(core);
-    // Thinner rings at different angles — distinct from YOU's wide horizontal ring
-    const r1=new THREE.Mesh(new THREE.TorusGeometry(.74,.046,8,48),
-      new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:2.8,transparent:true,opacity:.9}));
-    r1.rotation.x=Math.PI/3;g.add(r1);
-    const r2=new THREE.Mesh(new THREE.TorusGeometry(.6,.028,6,38),
-      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.8,transparent:true,opacity:.75}));
-    r2.rotation.x=-Math.PI/4;g.add(r2);
-    const r3=new THREE.Mesh(new THREE.TorusGeometry(.5,.018,6,32),
-      new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:1.4,transparent:true,opacity:.55}));
-    r3.rotation.x=Math.PI/2;r3.rotation.z=Math.PI/4;g.add(r3);
-    // Wireframe crystal cage (octahedral, not icosahedral like YOU)
-    const cage=new THREE.Mesh(new THREE.OctahedronGeometry(1.12,0),
-      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.5,wireframe:true,transparent:true,opacity:.38}));
-    g.add(cage);
-    const beam=new THREE.Mesh(new THREE.CylinderGeometry(.02,.15,5,6),
-      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:2,transparent:true,opacity:.2}));
-    beam.position.y=2.8;g.add(beam);
-    g.add(new THREE.PointLight(col,8,12));g.add(new THREE.PointLight(col,3,5));
-    g.position.y=.45;scene.add(g);
-    return{g,glow,mid,body,oct,r1,r2,r3,beam,cage};
-  }
+  // Both YOU and ECHO: identical quantum particle — same shape, only color differs
+  const body=new THREE.Mesh(new THREE.SphereGeometry(.54,24,24),
+    new THREE.MeshLambertMaterial({color:0xffffff,emissive:col,emissiveIntensity:3.5}));
+  g.add(body);
+  const mid=new THREE.Mesh(new THREE.SphereGeometry(.88,14,14),
+    new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.35,transparent:true,opacity:.18}));
+  g.add(mid);
+  const glow=new THREE.Mesh(new THREE.SphereGeometry(1.32,12,12),
+    new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.2,transparent:true,opacity:.12}));
+  g.add(glow);
+  const core=new THREE.Mesh(new THREE.SphereGeometry(.22,10,10),
+    new THREE.MeshLambertMaterial({color:0xffffff,emissive:0xffffff,emissiveIntensity:5}));
+  g.add(core);
+  const oct=new THREE.Mesh(new THREE.OctahedronGeometry(.25,0),
+    new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:5}));
+  g.add(oct);
+  const r1=new THREE.Mesh(new THREE.TorusGeometry(.86,.075,8,56),
+    new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:3.2}));
+  r1.rotation.x=Math.PI/2;g.add(r1);
+  const r2=new THREE.Mesh(new THREE.TorusGeometry(.72,.034,6,44),
+    new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.8,transparent:true,opacity:.82}));
+  r2.rotation.x=Math.PI/5;g.add(r2);
+  const r3=new THREE.Mesh(new THREE.TorusGeometry(.62,.022,6,36),
+    new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:1.5,transparent:true,opacity:.6}));
+  r3.rotation.x=-Math.PI/3;r3.rotation.z=Math.PI/4;g.add(r3);
+  const beam=new THREE.Mesh(new THREE.CylinderGeometry(.03,.2,7,6),
+    new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:2.2,transparent:true,opacity:.3}));
+  beam.position.y=3.8;g.add(beam);
+  const cage=new THREE.Mesh(new THREE.IcosahedronGeometry(1.62,0),
+    new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.1,wireframe:true,transparent:true,opacity:.16}));
+  g.add(cage);
+  g.add(new THREE.PointLight(col,12,16));g.add(new THREE.PointLight(col,4.5,6));
+  g.position.y=.45;scene.add(g);
+  return{g,glow,mid,body,oct,r1,r2,r3,beam,cage};
 }
-const PL=makePlayer(0x00cfff,0x88eeff,true);   // YOU — cyan, bigger
-const PR=makePlayer(0xff00aa,0xff88cc,false);   // ECHO — pink
+const PL=makePlayer(0x00cfff,0x88eeff);   // YOU — cyan
+const PR=makePlayer(0xff00aa,0xff88cc);   // ECHO — pink
 PL.g.position.set(-3.5,.45,2.5);
 PR.g.position.set( 3.5,.45,2.5);
 function animateYouPulse(t){
@@ -1221,7 +1180,7 @@ function showScorePopup(text,gold=false){
 }
 function refreshHUD(){
   document.getElementById('val-score').textContent=score;
-  document.getElementById('val-streak').textContent=streak;
+  document.getElementById('val-streak').textContent='×'+streak;
   document.getElementById('val-level').textContent=level;
   document.getElementById('val-pb').textContent=highScore;
   const sw=document.getElementById('hud-streak-wrap');
@@ -1356,7 +1315,7 @@ function die(){
   spawnDeathParticles(PL.g.position,0x00cfff);
   spawnDeathParticles(PR.g.position,0xff00aa);
   const dm=pickMsg('death');
-  showMsg(dm,4500);refreshHUD();refreshLives();updateHS();
+  showMsg(dm,7500);refreshHUD();refreshLives();updateHS();
   scene.background=new THREE.Color(0x1a0204);
   spottedWrap.style.display='none';wasSpottedFrac=0;
   setTimeout(()=>{
