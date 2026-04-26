@@ -17,18 +17,18 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 
 /* ── HUD ── */
 #hud{position:fixed;top:0;left:0;right:0;padding:12px 20px;display:flex;align-items:flex-start;justify-content:space-between;pointer-events:none;z-index:50}
-#hud-you{font-size:clamp(18px,2.3vw,26px);letter-spacing:3px;color:#00cfff;text-shadow:0 0 16px #00cfff;line-height:1.3}
-#hud-you em{font-style:normal;opacity:.55;font-size:.55em;letter-spacing:5px;display:block;margin-bottom:1px}
-.hud-pb{font-size:clamp(10px,1.1vw,13px);letter-spacing:3px;color:rgba(255,200,0,.7);margin-top:3px;text-shadow:none}
+#hud-you{font-size:clamp(21px,2.6vw,30px);letter-spacing:3px;color:#00cfff;text-shadow:0 0 16px #00cfff;line-height:1.3;font-weight:bold}
+#hud-you em{font-style:normal;opacity:.55;font-size:.52em;letter-spacing:5px;display:block;margin-bottom:1px;font-weight:normal}
+.hud-pb{font-size:clamp(12px,1.3vw,16px);letter-spacing:3px;color:rgba(255,200,0,.7);margin-top:3px;text-shadow:none}
 #hud-center{position:absolute;left:50%;transform:translateX(-50%);text-align:center}
-#hud-dim{font-size:clamp(16px,2vw,22px);letter-spacing:6px;color:rgba(255,255,255,.85);text-shadow:0 0 10px rgba(255,255,255,.4)}
-#hud-mode{font-size:clamp(11px,1.3vw,14px);letter-spacing:4px;color:rgba(200,160,255,.7);margin-top:3px}
-#hud-echo{font-size:clamp(18px,2.3vw,26px);letter-spacing:3px;color:#ff00aa;text-shadow:0 0 16px #ff00aa;text-align:right;line-height:1.3}
-#hud-echo em{font-style:normal;opacity:.55;font-size:.55em;letter-spacing:5px;display:block;margin-bottom:1px}
-#hud-streak-label{font-size:clamp(9px,1vw,11px);letter-spacing:3px;color:rgba(255,0,170,.5);display:block;margin-top:2px;text-align:right}
+#hud-dim{font-size:clamp(19px,2.3vw,26px);letter-spacing:6px;color:rgba(255,255,255,.85);text-shadow:0 0 10px rgba(255,255,255,.4);font-weight:bold}
+#hud-mode{font-size:clamp(13px,1.5vw,17px);letter-spacing:4px;color:rgba(200,160,255,.7);margin-top:3px}
+#hud-echo{font-size:clamp(21px,2.6vw,30px);letter-spacing:3px;color:#ff00aa;text-shadow:0 0 16px #ff00aa;text-align:right;line-height:1.3;font-weight:bold}
+#hud-echo em{font-style:normal;opacity:.55;font-size:.52em;letter-spacing:5px;display:block;margin-bottom:1px;font-weight:normal}
+#hud-streak-label{font-size:clamp(10px,1.1vw,13px);letter-spacing:3px;color:rgba(255,0,170,.5);display:block;margin-top:2px;text-align:right}
 
 /* ── READY PROMPT ── */
-#ready-prompt{position:fixed;left:50%;bottom:115px;transform:translateX(-50%);font-size:clamp(16px,2vw,22px);letter-spacing:7px;color:#ffffff;z-index:60;display:none;animation:blink 1.2s ease-in-out infinite;white-space:nowrap;text-shadow:0 0 25px rgba(255,255,255,.6)}
+#ready-prompt{position:fixed;left:50%;bottom:115px;transform:translateX(-50%);font-size:clamp(18px,2.3vw,26px);letter-spacing:7px;color:#ffffff;z-index:60;display:none;animation:blink 1.2s ease-in-out infinite;white-space:nowrap;text-shadow:0 0 25px rgba(255,255,255,.6)}
 @keyframes blink{0%,100%{opacity:.2}55%{opacity:1}}
 
 /* ── SCORE POPUP ── */
@@ -36,7 +36,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 
 /* ── SPOTTED METER ── */
 #spotted-wrap{position:fixed;left:50%;bottom:78px;transform:translateX(-50%);width:300px;display:none;flex-direction:column;align-items:center;gap:7px;z-index:60;pointer-events:none}
-#spotted-label{font-size:clamp(13px,1.6vw,17px);letter-spacing:5px;color:#ff4400;text-shadow:0 0 14px #ff4400}
+#spotted-label{font-size:clamp(14px,1.8vw,19px);letter-spacing:5px;color:#ff4400;text-shadow:0 0 14px #ff4400}
 #spotted-track{width:100%;height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
 #spotted-fill{height:100%;width:0;border-radius:3px;transition:background .1s}
 
@@ -52,7 +52,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 #rule-hint{font-size:clamp(12px,1.3vw,15px);letter-spacing:7px;color:rgba(255,255,255,.3);margin-top:48px;animation:blink 1.4s ease-in-out infinite}
 
 /* ── BOTTOM MESSAGE ── */
-#msg{position:fixed;bottom:44px;left:0;right:0;text-align:center;font-size:clamp(14px,1.8vw,20px);letter-spacing:1px;color:#ffffff;opacity:0;transition:opacity .4s;pointer-events:none;z-index:60;padding:0 32px;font-style:italic;text-shadow:0 0 14px rgba(255,255,255,.5),0 2px 8px rgba(0,0,0,.9);background:linear-gradient(transparent,rgba(1,1,18,.6) 30%,rgba(1,1,18,.6) 70%,transparent)}
+#msg{position:fixed;bottom:44px;left:0;right:0;text-align:center;font-size:clamp(15px,2vw,22px);letter-spacing:1px;color:#ffffff;opacity:0;transition:opacity .4s;pointer-events:none;z-index:60;padding:0 32px;font-style:italic;text-shadow:0 0 14px rgba(255,255,255,.5),0 2px 8px rgba(0,0,0,.9);background:linear-gradient(transparent,rgba(1,1,18,.6) 30%,rgba(1,1,18,.6) 70%,transparent)}
 
 /* ── INTRO LABELS ── */
 #intro-labels{position:fixed;inset:0;pointer-events:none;z-index:80;display:none}
@@ -66,73 +66,81 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 #audio-btn.on{border-color:rgba(0,207,255,.4);color:rgba(0,207,255,.85)}
 
 /* ── START OVERLAY ── */
-#overlay{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;background:rgba(1,1,18,.97);overflow-y:auto;overflow-x:hidden;scrollbar-width:none;padding:0 20px;gap:8px}
+#overlay{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;background:rgba(1,1,18,.97);overflow-y:auto;overflow-x:hidden;scrollbar-width:none;padding:0 28px;gap:10px}
 #overlay::-webkit-scrollbar{display:none}
-#overlay::before,#overlay::after{content:'';flex:1;min-height:6px}
-#ov-title{font-size:clamp(40px,7vw,88px);letter-spacing:clamp(5px,1.4vw,16px);background:linear-gradient(130deg,#00cfff 0%,#ffffff 48%,#ff00aa 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-align:center;line-height:1.1;filter:drop-shadow(0 0 28px rgba(0,207,255,.7)) drop-shadow(0 0 55px rgba(255,0,170,.45))}
-#ov-sub{font-size:clamp(9px,1vw,12px);letter-spacing:6px;color:rgba(255,255,255,.3);text-align:center;margin-top:-4px}
-#ov-headphones{font-size:clamp(10px,1.1vw,12px);letter-spacing:2px;color:rgba(255,255,255,.4);text-align:center;border:1px solid rgba(255,255,255,.1);padding:5px 14px;background:rgba(255,255,255,.03)}
-.ov-badge.ov-b-dim{background:rgba(180,180,255,.1);color:rgba(220,220,255,.75);border:1px solid rgba(180,180,255,.25);font-size:clamp(8px,.9vw,10px);letter-spacing:2px;padding:2px 6px;border-radius:2px;flex-shrink:0;margin-top:1px;white-space:nowrap}
-#ov-panels{display:flex;gap:10px;width:100%;max-width:560px}
-.ov-panel{flex:1;border:1px solid;padding:10px 12px}
+#overlay::before,#overlay::after{content:'';flex:1;min-height:8px}
+#ov-title{font-size:clamp(46px,8vw,96px);letter-spacing:clamp(6px,1.6vw,18px);background:linear-gradient(130deg,#00cfff 0%,#ffffff 48%,#ff00aa 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-align:center;line-height:1.1;filter:drop-shadow(0 0 28px rgba(0,207,255,.7)) drop-shadow(0 0 55px rgba(255,0,170,.45))}
+#ov-sub{font-size:clamp(12px,1.2vw,15px);letter-spacing:6px;color:rgba(255,255,255,.38);text-align:center;margin-top:2px}
+#ov-headphones{font-size:clamp(12px,1.2vw,14px);letter-spacing:2px;color:rgba(255,255,255,.45);text-align:center;border:1px solid rgba(255,255,255,.1);padding:6px 16px;background:rgba(255,255,255,.03)}
+#ov-panels{display:flex;gap:12px;width:100%;max-width:720px}
+.ov-panel{flex:1;border:1px solid;padding:12px 16px}
 #ov-panel-you{border-color:rgba(0,207,255,.45);background:rgba(0,207,255,.04)}
 #ov-panel-echo{border-color:rgba(255,0,170,.45);background:rgba(255,0,170,.04)}
-.ov-panel-head{font-size:clamp(10px,1.1vw,12px);letter-spacing:4px;margin-bottom:5px}
+.ov-panel-head{font-size:clamp(11px,1.2vw,14px);letter-spacing:4px;margin-bottom:6px;font-weight:bold}
 #ov-panel-you .ov-panel-head{color:#00cfff}
 #ov-panel-echo .ov-panel-head{color:#ff00aa}
-.ov-panel-body{font-size:clamp(11px,1.1vw,13px);color:rgba(255,255,255,.88);line-height:1.7;letter-spacing:.3px}
-#ov-extras{max-width:560px;width:100%;border:1px solid rgba(255,255,255,.12);padding:8px 12px}
-.ov-extra-row{display:flex;align-items:flex-start;gap:8px;font-size:clamp(10px,1vw,12px);color:rgba(255,255,255,.82);letter-spacing:.5px;line-height:1.65}
-.ov-extra-row+.ov-extra-row{margin-top:3px}
-.ov-badge{font-size:clamp(8px,.9vw,10px);letter-spacing:2px;padding:2px 7px;border-radius:2px;flex-shrink:0;margin-top:2px;white-space:nowrap;line-height:1.5}
-.ov-badge.ov-b-dim{background:rgba(255,255,255,.07);color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.18)}
+.ov-panel-body{font-size:clamp(12px,1.2vw,15px);color:rgba(255,255,255,.88);line-height:1.6;letter-spacing:.3px}
+#ov-extras{max-width:720px;width:100%;border:1px solid rgba(255,255,255,.12);padding:10px 16px}
+.ov-extra-row{display:flex;align-items:baseline;gap:12px;font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.82);letter-spacing:.5px;line-height:1.45}
+.ov-extra-row+.ov-extra-row{margin-top:6px}
+/* All badges: fixed width so descriptions align perfectly */
+.ov-badge{display:inline-block;width:76px;text-align:center;font-size:clamp(10px,1vw,12px);letter-spacing:2px;padding:3px 0;border-radius:2px;flex-shrink:0;white-space:nowrap;line-height:1.5;font-weight:bold}
+.ov-badge.ov-b-dim{background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.2)}
 .ov-badge.ov-b-gold{background:rgba(255,204,0,.12);color:#ffcc44;border:1px solid rgba(255,204,0,.3)}
 .ov-badge.ov-b-red{background:rgba(255,50,0,.12);color:#ff7744;border:1px solid rgba(255,60,0,.28)}
-/* keep old class names as aliases for any remaining references */
 .ov-badge.gold{background:rgba(255,204,0,.12);color:#ffcc44;border:1px solid rgba(255,204,0,.3)}
 .ov-badge.red{background:rgba(255,50,0,.12);color:#ff7744;border:1px solid rgba(255,60,0,.28)}
-.ov-badge.cyan{background:rgba(255,255,255,.07);color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.18)}
-#username-wrap{width:100%;max-width:560px;text-align:center}
-#username-wrap label{display:block;font-size:clamp(9px,.95vw,11px);letter-spacing:5px;color:rgba(255,255,255,.45);margin-bottom:4px}
-#username-input{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.25);color:#fff;font-family:'Courier New',monospace;font-size:clamp(14px,1.7vw,20px);letter-spacing:5px;padding:4px 8px;outline:none;text-align:center;width:240px;transition:border-color .2s;text-transform:uppercase}
+.ov-badge.cyan{background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.2)}
+#username-wrap{width:100%;max-width:720px;text-align:center}
+#username-wrap label{display:block;font-size:clamp(11px,1.1vw,14px);letter-spacing:5px;color:rgba(255,255,255,.5);margin-bottom:6px}
+#username-input{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.25);color:#fff;font-family:'Courier New',monospace;font-size:clamp(16px,1.9vw,24px);letter-spacing:5px;padding:4px 8px;outline:none;text-align:center;width:260px;transition:border-color .2s;text-transform:uppercase}
 #username-input:focus{border-bottom-color:rgba(0,207,255,.7)}
 #username-input::placeholder{color:rgba(255,255,255,.2);font-size:.7em;letter-spacing:3px;text-transform:none}
-#ov-hs{font-size:clamp(10px,1.1vw,13px);letter-spacing:4px;color:rgba(255,204,0,.65)}
-.ov-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:#ffffff;font-family:'Courier New',monospace;font-size:clamp(12px,1.3vw,16px);letter-spacing:7px;padding:12px 40px;cursor:pointer;transition:all .25s;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+#ov-hs{font-size:clamp(12px,1.3vw,16px);letter-spacing:4px;color:rgba(255,204,0,.7)}
+.ov-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:#ffffff;font-family:'Courier New',monospace;font-size:clamp(14px,1.5vw,20px);letter-spacing:7px;padding:13px 44px;cursor:pointer;transition:all .25s;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .ov-btn:hover{border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.06);letter-spacing:8px}
-#ov-hint{font-size:clamp(10px,1.1vw,12px);letter-spacing:1px;color:rgba(255,255,255,.42);text-align:center;line-height:2}
-@media(max-width:530px){#ov-panels{flex-direction:column}}
+#ov-hint{font-size:clamp(11px,1.1vw,14px);letter-spacing:1px;color:rgba(255,255,255,.42);text-align:center;line-height:2}
+@media(max-width:600px){#ov-panels{flex-direction:column}}
 
 /* ── GAME OVER ── */
 #gameover{position:fixed;inset:0;z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(1,1,18,.95)}
-#go-title{font-size:clamp(28px,5.5vw,60px);letter-spacing:12px;color:#ff1a33;text-shadow:0 0 40px #ff1a3366;margin-bottom:10px}
-#go-score{font-size:clamp(15px,1.9vw,22px);letter-spacing:4px;color:rgba(255,255,255,.55);margin-bottom:4px}
-#go-hs{font-size:clamp(13px,1.6vw,19px);letter-spacing:3px;color:rgba(255,200,0,.65);margin-bottom:20px}
-#go-msg{font-size:clamp(13px,1.6vw,17px);letter-spacing:1.5px;color:rgba(255,255,255,.38);margin-bottom:28px;font-style:italic;max-width:470px;text-align:center;line-height:1.9}
+#go-title{font-size:clamp(32px,6.5vw,70px);letter-spacing:12px;color:#ff1a33;text-shadow:0 0 40px #ff1a3366;margin-bottom:10px;font-weight:bold}
+#go-score{font-size:clamp(17px,2.1vw,26px);letter-spacing:4px;color:rgba(255,255,255,.55);margin-bottom:4px}
+#go-hs{font-size:clamp(15px,1.8vw,22px);letter-spacing:3px;color:rgba(255,200,0,.65);margin-bottom:20px}
+#go-msg{font-size:clamp(14px,1.7vw,19px);letter-spacing:1.5px;color:rgba(255,255,255,.38);margin-bottom:28px;font-style:italic;max-width:500px;text-align:center;line-height:1.9}
 /* ── LEADERBOARD ── */
-#go-lb{width:100%;max-width:420px;margin-bottom:28px;border:1px solid rgba(255,255,255,.1);padding:14px 18px}
-#go-lb-title{font-size:clamp(10px,1.1vw,12px);letter-spacing:6px;color:rgba(255,255,255,.35);margin-bottom:12px;text-align:center}
-.lb-row{display:flex;justify-content:space-between;font-size:clamp(12px,1.4vw,14px);letter-spacing:2px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+#go-lb{width:100%;max-width:460px;margin-bottom:28px;border:1px solid rgba(255,255,255,.1);padding:16px 20px}
+#go-lb-title{font-size:clamp(11px,1.2vw,14px);letter-spacing:6px;color:rgba(255,255,255,.4);margin-bottom:14px;text-align:center}
+.lb-row{display:flex;justify-content:space-between;font-size:clamp(13px,1.5vw,16px);letter-spacing:2px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.05)}
 .lb-row:last-child{border-bottom:none}
-.lb-rank{color:rgba(255,255,255,.3);width:28px}
+.lb-rank{color:rgba(255,255,255,.3);width:32px}
 .lb-name{color:rgba(255,255,255,.7);flex:1;text-transform:uppercase}
 .lb-score{color:rgba(255,200,0,.75);letter-spacing:3px}
 .lb-row.lb-me .lb-name,.lb-row.lb-me .lb-score{color:#00cfff;text-shadow:0 0 10px #00cfff}
 /* ── LIVES (inside HUD center) ── */
 #lives-wrap{display:flex;gap:5px;justify-content:center;margin-top:5px;pointer-events:none}
-.life-heart{font-size:clamp(13px,1.5vw,17px);transition:opacity .35s,transform .35s;text-shadow:0 0 8px rgba(255,60,60,.8)}
+.life-heart{font-size:clamp(15px,1.7vw,20px);transition:opacity .35s,transform .35s;text-shadow:0 0 8px rgba(255,60,60,.8)}
 .life-heart.lost{opacity:.14;transform:scale(.65)}
-#hud-streak-wrap{font-size:clamp(17px,2.1vw,26px);letter-spacing:2px;color:#ffdd00;text-shadow:0 0 14px rgba(255,220,0,.9);margin-top:4px;text-align:center;line-height:1;transition:transform .15s,text-shadow .3s}
+#hud-streak-wrap{font-size:clamp(20px,2.4vw,30px);letter-spacing:2px;color:#ffdd00;text-shadow:0 0 14px rgba(255,220,0,.9);margin-top:4px;text-align:center;line-height:1;transition:transform .15s,text-shadow .3s;font-weight:bold}
 #hud-streak-wrap.streak-pulse{animation:streakPop .35s ease-out}
 @keyframes streakPop{0%{transform:scale(1.6)}100%{transform:scale(1)}}
-#hud-streak-label{font-size:clamp(8px,.9vw,11px);letter-spacing:4px;color:rgba(255,200,0,.7);vertical-align:middle}
+#hud-streak-label{font-size:clamp(10px,1.1vw,13px);letter-spacing:4px;color:rgba(255,200,0,.7);vertical-align:middle;font-weight:normal}
 .hud-next-pts{display:none}
 
-/* ── JOYSTICK ── */
-#joystick-zone{position:fixed;bottom:0;left:0;width:100%;height:44%;display:none;z-index:50;touch-action:none}
-#joystick-base{position:absolute;width:108px;height:108px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.02);display:none;pointer-events:none;transform:translate(-50%,-50%)}
-#joystick-knob{position:absolute;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);top:50%;left:50%;transform:translate(-50%,-50%)}
-@media(pointer:coarse){#joystick-zone{display:block}}
+/* ── D-PAD ── */
+#dpad{position:fixed;bottom:max(28px,env(safe-area-inset-bottom,0px) + 16px);left:max(28px,env(safe-area-inset-left,0px) + 16px);display:none;flex-direction:column;align-items:center;gap:5px;z-index:50}
+.dp-row{display:flex;gap:5px;align-items:center}
+.dp-btn{width:62px;height:62px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);font-size:22px;display:flex;align-items:center;justify-content:center;border-radius:8px;cursor:pointer;touch-action:none;-webkit-tap-highlight-color:transparent;user-select:none;transition:background .08s,border-color .08s}
+.dp-btn.active,.dp-btn:active{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5)}
+.dp-center{width:62px;height:62px}
+@media(pointer:coarse){#dpad{display:flex}}
+/* ── PORTRAIT WARNING ── */
+#portrait-warn{position:fixed;inset:0;z-index:999;background:#010112;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;padding:40px;pointer-events:none}
+#portrait-icon{font-size:56px;animation:rotHint 2.4s ease-in-out infinite}
+@keyframes rotHint{0%,100%{transform:rotate(0deg)}45%,55%{transform:rotate(90deg)}}
+#portrait-title{font-size:clamp(18px,5vw,26px);letter-spacing:6px;color:#fff;font-family:'Courier New',monospace}
+#portrait-sub{font-size:clamp(12px,3vw,15px);letter-spacing:2px;color:rgba(255,255,255,.45);font-family:'Courier New',monospace;line-height:1.7}
+@media(pointer:coarse) and (orientation:portrait){#portrait-warn{display:flex}}
 </style>
 </head>
 <body>
@@ -209,8 +217,19 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
   <button class="ov-btn" id="retry-btn">TRY AGAIN</button>
 </div>
 
-<div id="joystick-zone">
-  <div id="joystick-base"><div id="joystick-knob"></div></div>
+<div id="dpad">
+  <button class="dp-btn" id="dpad-u">▲</button>
+  <div class="dp-row">
+    <button class="dp-btn" id="dpad-l">◀</button>
+    <div class="dp-center"></div>
+    <button class="dp-btn" id="dpad-r">▶</button>
+  </div>
+  <button class="dp-btn" id="dpad-d">▼</button>
+</div>
+<div id="portrait-warn">
+  <div id="portrait-icon">📱</div>
+  <div id="portrait-title">ROTATE SCREEN</div>
+  <div id="portrait-sub">landscape mode recommended<br>for the best experience</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -361,9 +380,9 @@ document.body.prepend(renderer.domElement);
 const scene=new THREE.Scene();
 scene.background=new THREE.Color(0x010112);
 scene.fog=new THREE.FogExp2(0x010112,.022);
-const camera=new THREE.PerspectiveCamera(68,window.innerWidth/window.innerHeight,.1,200);
-camera.position.set(0,8.5,17);
-camera.lookAt(0,0,-2.5);
+const camera=new THREE.PerspectiveCamera(62,window.innerWidth/window.innerHeight,.1,200);
+camera.position.set(0,10.5,13.5);
+camera.lookAt(0,0,-1.5);
 window.addEventListener('resize',()=>{
   camera.aspect=window.innerWidth/window.innerHeight;
   camera.updateProjectionMatrix();
@@ -570,51 +589,80 @@ discR.rotation.x=-Math.PI/2;discR.position.y=.018;scene.add(discR);
 // ═══ PLAYERS ══════════════════════════════════════════════════════════════════
 function makePlayer(col,em,isYou){
   const g=new THREE.Group();
-  const sz=isYou?1.0:0.88; // YOU is visually bigger
-  // Outer glow
-  const glow=new THREE.Mesh(new THREE.SphereGeometry(1.4*sz,16,16),
-    new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.22,transparent:true,opacity:.1}));
-  g.add(glow);
-  const mid=new THREE.Mesh(new THREE.SphereGeometry(0.82*sz,12,12),
-    new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.35,transparent:true,opacity:.2}));
-  g.add(mid);
-  // Body — clearly orb-shaped, larger for YOU
-  const body=new THREE.Mesh(new THREE.SphereGeometry(.46*sz,24,24),
-    new THREE.MeshLambertMaterial({color:0xffffff,emissive:col,emissiveIntensity:isYou?3.2:2.6}));
-  g.add(body);
-  // Solid inner core (pure white) — unmistakable as a character, not a star
-  const core=new THREE.Mesh(new THREE.SphereGeometry(.2*sz,12,12),
-    new THREE.MeshLambertMaterial({color:0xffffff,emissive:0xffffff,emissiveIntensity:isYou?5:4}));
-  g.add(core);
-  const oct=new THREE.Mesh(new THREE.OctahedronGeometry(.22*sz,0),
-    new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:5}));
-  g.add(oct);
-  // Ring 1
-  const r1=new THREE.Mesh(new THREE.TorusGeometry(.72*sz,.06*sz,8,52),
-    new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:isYou?3.0:2.2}));
-  r1.rotation.x=Math.PI/2;g.add(r1);
-  // Ring 2
-  const r2=new THREE.Mesh(new THREE.TorusGeometry(.98*sz,.03*sz,6,44),
-    new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.6,transparent:true,opacity:.85}));
-  r2.rotation.x=Math.PI/5;g.add(r2);
-  // Ring 3
-  const r3=new THREE.Mesh(new THREE.TorusGeometry(.88*sz,.022*sz,6,38),
-    new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:1.4,transparent:true,opacity:.6}));
-  r3.rotation.x=-Math.PI/3;r3.rotation.z=Math.PI/4;g.add(r3);
-  // Vertical light beam (beacon)
-  const beam=new THREE.Mesh(new THREE.CylinderGeometry(.03,.22*sz,7,6),
-    new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:2.2,transparent:true,opacity:isYou?.3:.2}));
-  beam.position.y=3.8;g.add(beam);
-  // Outer wireframe cage — unique to players, stars don't have this
-  const cageGeo=new THREE.IcosahedronGeometry(1.55*sz,0);
-  const cage=new THREE.Mesh(cageGeo,
-    new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.2,wireframe:true,transparent:true,opacity:.22}));
-  g.add(cage);
-  // Lights — YOU gets stronger lights
-  g.add(new THREE.PointLight(col,isYou?10:7,isYou?14:10));
-  g.add(new THREE.PointLight(col,isYou?4:3,6));
-  g.position.y=.45;scene.add(g);
-  return{g,glow,mid,body,oct,r1,r2,r3,beam,cage};
+  if(isYou){
+    // YOU — radiant sphere: round, warm, unmistakably the protagonist
+    const body=new THREE.Mesh(new THREE.SphereGeometry(.54,24,24),
+      new THREE.MeshLambertMaterial({color:0xffffff,emissive:col,emissiveIntensity:3.5}));
+    g.add(body);
+    const mid=new THREE.Mesh(new THREE.SphereGeometry(.88,14,14),
+      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.35,transparent:true,opacity:.18}));
+    g.add(mid);
+    const glow=new THREE.Mesh(new THREE.SphereGeometry(1.32,12,12),
+      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.2,transparent:true,opacity:.12}));
+    g.add(glow);
+    const core=new THREE.Mesh(new THREE.SphereGeometry(.22,10,10),
+      new THREE.MeshLambertMaterial({color:0xffffff,emissive:0xffffff,emissiveIntensity:5}));
+    g.add(core);
+    const oct=new THREE.Mesh(new THREE.OctahedronGeometry(.25,0),
+      new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:5}));
+    g.add(oct);
+    // Wide dominant equatorial ring — YOU's signature
+    const r1=new THREE.Mesh(new THREE.TorusGeometry(.86,.075,8,56),
+      new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:3.2}));
+    r1.rotation.x=Math.PI/2;g.add(r1);
+    const r2=new THREE.Mesh(new THREE.TorusGeometry(.72,.034,6,44),
+      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.8,transparent:true,opacity:.82}));
+    r2.rotation.x=Math.PI/5;g.add(r2);
+    const r3=new THREE.Mesh(new THREE.TorusGeometry(.62,.022,6,36),
+      new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:1.5,transparent:true,opacity:.6}));
+    r3.rotation.x=-Math.PI/3;r3.rotation.z=Math.PI/4;g.add(r3);
+    const beam=new THREE.Mesh(new THREE.CylinderGeometry(.03,.2,7,6),
+      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:2.2,transparent:true,opacity:.3}));
+    beam.position.y=3.8;g.add(beam);
+    const cage=new THREE.Mesh(new THREE.IcosahedronGeometry(1.62,0),
+      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.1,wireframe:true,transparent:true,opacity:.16}));
+    g.add(cage);
+    g.add(new THREE.PointLight(col,12,16));g.add(new THREE.PointLight(col,4.5,6));
+    g.position.y=.45;scene.add(g);
+    return{g,glow,mid,body,oct,r1,r2,r3,beam,cage};
+  } else {
+    // ECHO — angular crystal: octahedron body, clearly ≠ YOU's soft sphere
+    const body=new THREE.Mesh(new THREE.OctahedronGeometry(.58,0),
+      new THREE.MeshLambertMaterial({color:0xffffff,emissive:col,emissiveIntensity:2.8}));
+    g.add(body);
+    // Translucent outer octahedron shell
+    const mid=new THREE.Mesh(new THREE.OctahedronGeometry(.96,0),
+      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.18,transparent:true,opacity:.1}));
+    g.add(mid);
+    const glow=new THREE.Mesh(new THREE.SphereGeometry(1.12,10,10),
+      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:.15,transparent:true,opacity:.09}));
+    g.add(glow);
+    // oct points to body (the octahedron) — animations spin it
+    const oct=body;
+    const core=new THREE.Mesh(new THREE.SphereGeometry(.18,8,8),
+      new THREE.MeshLambertMaterial({color:0xffffff,emissive:col,emissiveIntensity:5}));
+    g.add(core);
+    // Thinner rings at different angles — distinct from YOU's wide horizontal ring
+    const r1=new THREE.Mesh(new THREE.TorusGeometry(.74,.046,8,48),
+      new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:2.8,transparent:true,opacity:.9}));
+    r1.rotation.x=Math.PI/3;g.add(r1);
+    const r2=new THREE.Mesh(new THREE.TorusGeometry(.6,.028,6,38),
+      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.8,transparent:true,opacity:.75}));
+    r2.rotation.x=-Math.PI/4;g.add(r2);
+    const r3=new THREE.Mesh(new THREE.TorusGeometry(.5,.018,6,32),
+      new THREE.MeshLambertMaterial({color:em,emissive:em,emissiveIntensity:1.4,transparent:true,opacity:.55}));
+    r3.rotation.x=Math.PI/2;r3.rotation.z=Math.PI/4;g.add(r3);
+    // Wireframe crystal cage (octahedral, not icosahedral like YOU)
+    const cage=new THREE.Mesh(new THREE.OctahedronGeometry(1.12,0),
+      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:1.5,wireframe:true,transparent:true,opacity:.38}));
+    g.add(cage);
+    const beam=new THREE.Mesh(new THREE.CylinderGeometry(.02,.15,5,6),
+      new THREE.MeshLambertMaterial({color:col,emissive:col,emissiveIntensity:2,transparent:true,opacity:.2}));
+    beam.position.y=2.8;g.add(beam);
+    g.add(new THREE.PointLight(col,8,12));g.add(new THREE.PointLight(col,3,5));
+    g.position.y=.45;scene.add(g);
+    return{g,glow,mid,body,oct,r1,r2,r3,beam,cage};
+  }
 }
 const PL=makePlayer(0x00cfff,0x88eeff,true);   // YOU — cyan, bigger
 const PR=makePlayer(0xff00aa,0xff88cc,false);   // ECHO — pink
@@ -871,23 +919,29 @@ window.addEventListener('keydown',e=>{
   if(bannerDismiss){bannerDismiss();bannerDismiss=null;}
 });
 window.addEventListener('keyup',e=>{keys[e.key]=false;});
-const joyBase=document.getElementById('joystick-base'),joyKnob=document.getElementById('joystick-knob');
-const joy={active:false,sx:0,sy:0,dx:0,dy:0};
-const jz=document.getElementById('joystick-zone');
-jz.addEventListener('pointerdown',e=>{joy.active=true;joy.sx=e.clientX;joy.sy=e.clientY;joy.dx=0;joy.dy=0;joyBase.style.left=e.clientX+'px';joyBase.style.top=e.clientY+'px';joyBase.style.display='block';joyKnob.style.left='50%';joyKnob.style.top='50%';e.preventDefault();});
-jz.addEventListener('pointermove',e=>{if(!joy.active)return;const dx=e.clientX-joy.sx,dy=e.clientY-joy.sy;const d=Math.min(Math.hypot(dx,dy),40),a=Math.atan2(dy,dx);joy.dx=Math.cos(a)*d/40;joy.dy=Math.sin(a)*d/40;joyKnob.style.left=(50+joy.dx*40)+'px';joyKnob.style.top=(50+joy.dy*40)+'px';e.preventDefault();});
-['pointerup','pointercancel'].forEach(ev=>jz.addEventListener(ev,()=>{joy.active=false;joy.dx=0;joy.dy=0;joyBase.style.display='none';}));
+
+// ── D-PAD (digital, zero drift) ───────────────────────────────────────────────
+const dpad={u:false,d:false,l:false,r:false};
+['dpad-u','dpad-d','dpad-l','dpad-r'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(!el)return;
+  const dir=id.split('-')[1];
+  const press=e=>{dpad[dir]=true;el.classList.add('active');e.preventDefault();if(bannerDismiss){bannerDismiss();bannerDismiss=null;}};
+  const release=()=>{dpad[dir]=false;el.classList.remove('active');};
+  el.addEventListener('pointerdown',press,{passive:false});
+  ['pointerup','pointercancel','pointerleave'].forEach(ev=>el.addEventListener(ev,release));
+});
+
 function getInput(){
   let dx=0,dz=0;
-  if(keys['ArrowLeft']||keys['a']||keys['A'])dx-=1;
-  if(keys['ArrowRight']||keys['d']||keys['D'])dx+=1;
-  if(keys['ArrowUp']||keys['w']||keys['W'])dz-=1;
-  if(keys['ArrowDown']||keys['s']||keys['S'])dz+=1;
-  if(joy.active){dx+=joy.dx;dz+=joy.dy;}
+  if(keys['ArrowLeft']||keys['a']||keys['A']||dpad.l)dx-=1;
+  if(keys['ArrowRight']||keys['d']||keys['D']||dpad.r)dx+=1;
+  if(keys['ArrowUp']||keys['w']||keys['W']||dpad.u)dz-=1;
+  if(keys['ArrowDown']||keys['s']||keys['S']||dpad.d)dz+=1;
   const len=Math.hypot(dx,dz);if(len>1){dx/=len;dz/=len;}
   return{dx,dz};
 }
-function hasInput(){const{dx,dz}=getInput();return Math.abs(dx)>.04||Math.abs(dz)>.04;}
+function hasInput(){const{dx,dz}=getInput();return dx!==0||dz!==0;}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // ═══ AUDIO ENGINE — MELODIC TECHNO ════════════════════════════════════════════
