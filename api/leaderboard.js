@@ -3,9 +3,22 @@ const redis = new Redis({
   url: process.env.KV_REST_API_URL,
   token: process.env.KV_REST_API_TOKEN,
 });
-const KEY = 'duality_lb_v1';
+
+const KEY = 'duality_lb_v2';
 const MAX_SCORE = 9999999;
-const MAX_ENTRIES = 100;
+const MAX_ENTRIES = 400000;
+
+async function getTop10() {
+  const members = await redis.zrange(KEY, 0, 9, { rev: true });
+  if (!members || !members.length) return [];
+  const pipe = redis.pipeline();
+  members.forEach(m => pipe.zscore(KEY, m));
+  const scores = await pipe.exec();
+  return members.map((m, i) => ({
+    name: String(m).split('|')[0],
+    score: Number(scores[i]),
+  }));
+}
 
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -16,8 +29,7 @@ module.exports = async function handler(req, res) {
 
   if (req.method === 'GET') {
     try {
-      const lb = (await redis.get(KEY)) || [];
-      return res.status(200).json(lb.slice(0, 20));
+      return res.status(200).json(await getTop10());
     } catch (e) {
       return res.status(500).json([]);
     }
@@ -32,14 +44,31 @@ module.exports = async function handler(req, res) {
     const s = Number(score);
     if (!s || isNaN(s) || s <= 0 || s > MAX_SCORE) return res.status(400).end();
     const n = String(name || 'ANON').replace(/[<>"'&]/g, '').slice(0, 16).toUpperCase() || 'ANON';
+
     try {
-      const lb = (await redis.get(KEY)) || [];
-      lb.push({ name: n, score: Math.floor(s), date: new Date().toLocaleDateString('en-GB') });
-      lb.sort((a, b) => b.score - a.score);
-      await redis.set(KEY, lb.slice(0, MAX_ENTRIES));
-      return res.status(200).json(lb.slice(0, 20));
+      const count = await redis.zcard(KEY);
+
+      if (count >= MAX_ENTRIES) {
+        const minArr = await redis.zrange(KEY, 0, 0);
+        if (minArr && minArr.length) {
+          const minScore = Number(await redis.zscore(KEY, minArr[0]));
+          if (s <= minScore) {
+            return res.status(200).json({ tooLow: true });
+          }
+          await redis.zpopmin(KEY, 1);
+        }
+      }
+
+      const member = `${n}|${Date.now()}`;
+      await redis.zadd(KEY, { score: s, member });
+
+      const revRank = await redis.zrevrank(KEY, member);
+      const myRank = revRank !== null ? revRank + 1 : null;
+      const lb = await getTop10();
+
+      return res.status(200).json({ lb, myRank });
     } catch (e) {
-      return res.status(500).json([]);
+      return res.status(500).json({ lb: [] });
     }
   }
 

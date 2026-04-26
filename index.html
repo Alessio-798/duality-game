@@ -17,18 +17,19 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 
 /* ── HUD ── */
 #hud{position:fixed;top:0;left:0;right:0;padding:12px 20px;display:flex;align-items:flex-start;justify-content:space-between;pointer-events:none;z-index:50}
-#hud-you{font-size:clamp(21px,2.6vw,30px);letter-spacing:3px;color:#00cfff;text-shadow:0 0 16px #00cfff;line-height:1.3;font-weight:bold}
-#hud-you em{font-style:normal;opacity:.55;font-size:.52em;letter-spacing:5px;display:block;margin-bottom:1px;font-weight:normal}
-.hud-pb{font-size:clamp(12px,1.3vw,16px);letter-spacing:3px;color:rgba(255,200,0,.7);margin-top:3px;text-shadow:none}
+#hud-you{font-size:clamp(26px,3.2vw,38px);letter-spacing:3px;color:#00cfff;text-shadow:0 0 16px #00cfff;line-height:1.3;font-weight:bold}
+#hud-you em{font-style:normal;opacity:.88;font-size:.6em;letter-spacing:5px;display:block;margin-bottom:1px;font-weight:bold}
+.hud-pb{font-size:clamp(11px,1.1vw,14px);letter-spacing:3px;color:rgba(255,200,0,.7);margin-top:3px;text-shadow:none;line-height:1.3}
+#val-rank{font-size:.75em;opacity:.65;letter-spacing:2px}
 #hud-center{position:absolute;left:50%;transform:translateX(-50%);text-align:center}
 #hud-dim{font-size:clamp(19px,2.3vw,26px);letter-spacing:6px;color:rgba(255,255,255,.85);text-shadow:0 0 10px rgba(255,255,255,.4);font-weight:bold}
 #hud-mode{font-size:clamp(13px,1.5vw,17px);letter-spacing:4px;color:rgba(200,160,255,.7);margin-top:3px}
-#hud-echo{font-size:clamp(21px,2.6vw,30px);letter-spacing:3px;color:#ff00aa;text-shadow:0 0 16px #ff00aa;text-align:right;line-height:1.3;font-weight:bold}
-#hud-echo em{font-style:normal;opacity:.55;font-size:.52em;letter-spacing:5px;display:block;margin-bottom:1px;font-weight:normal}
+#hud-echo{font-size:clamp(26px,3.2vw,38px);letter-spacing:3px;color:#ff00aa;text-shadow:0 0 16px #ff00aa;text-align:right;line-height:1.3;font-weight:bold}
+#hud-echo em{font-style:normal;opacity:.88;font-size:.6em;letter-spacing:5px;display:block;margin-bottom:1px;font-weight:bold}
 #hud-streak-label{font-size:clamp(10px,1.1vw,13px);letter-spacing:3px;color:rgba(255,0,170,.5);display:block;margin-top:2px;text-align:right}
 
 /* ── READY PROMPT ── */
-#ready-prompt{position:fixed;left:50%;bottom:115px;transform:translateX(-50%);font-size:clamp(18px,2.3vw,26px);letter-spacing:7px;color:#ffffff;z-index:60;display:none;animation:blink 1.2s ease-in-out infinite;white-space:nowrap;text-shadow:0 0 25px rgba(255,255,255,.6)}
+#ready-prompt{position:fixed;left:50%;bottom:125px;transform:translateX(-50%);font-size:clamp(18px,2.3vw,26px);letter-spacing:7px;color:#ffffff;z-index:60;display:none;animation:blink 1.2s ease-in-out infinite;white-space:nowrap;text-shadow:0 0 25px rgba(255,255,255,.6)}
 @keyframes blink{0%,100%{opacity:.2}55%{opacity:1}}
 
 /* ── SCORE POPUP ── */
@@ -52,7 +53,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 #rule-hint{font-size:clamp(12px,1.3vw,15px);letter-spacing:7px;color:rgba(255,255,255,.3);margin-top:48px;animation:blink 1.4s ease-in-out infinite}
 
 /* ── BOTTOM MESSAGE ── */
-#msg{position:fixed;bottom:44px;left:0;right:0;text-align:center;font-size:clamp(15px,2vw,22px);letter-spacing:1px;color:#ffffff;opacity:0;transition:opacity .4s;pointer-events:none;z-index:60;padding:0 32px;font-style:italic;text-shadow:0 0 14px rgba(255,255,255,.5),0 2px 8px rgba(0,0,0,.9);background:linear-gradient(transparent,rgba(1,1,18,.6) 30%,rgba(1,1,18,.6) 70%,transparent)}
+#msg{position:fixed;bottom:90px;left:0;right:0;text-align:center;font-size:clamp(14px,1.8vw,20px);letter-spacing:1px;color:#ffffff;opacity:0;transition:opacity .4s;pointer-events:none;z-index:60;padding:0 32px;font-style:italic;text-shadow:0 0 18px rgba(255,255,255,.6),0 2px 12px rgba(0,0,0,.95)}
 
 /* ── INTRO LABELS ── */
 #intro-labels{position:fixed;inset:0;pointer-events:none;z-index:80;display:none}
@@ -70,18 +71,18 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 #overlay::-webkit-scrollbar{display:none}
 #overlay::before,#overlay::after{content:'';flex:1;min-height:8px}
 #ov-title{font-size:clamp(46px,8vw,96px);letter-spacing:clamp(6px,1.6vw,18px);background:linear-gradient(130deg,#00cfff 0%,#ffffff 48%,#ff00aa 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-align:center;line-height:1.1;filter:drop-shadow(0 0 28px rgba(0,207,255,.7)) drop-shadow(0 0 55px rgba(255,0,170,.45))}
-#ov-sub{font-size:clamp(14px,1.4vw,17px);letter-spacing:6px;color:rgba(255,255,255,.72);text-align:center;margin-top:-8px}
-#ov-headphones{font-size:clamp(14px,1.4vw,17px);letter-spacing:2px;color:rgba(255,255,255,.75);text-align:center;border:1px solid rgba(255,255,255,.18);padding:6px 16px;background:rgba(255,255,255,.03)}
+#ov-sub{font-size:clamp(12px,1.0vw,13px);letter-spacing:6px;color:rgba(255,255,255,.72);text-align:center;margin-top:-8px}
+#ov-headphones{font-size:clamp(11px,0.85vw,12px);letter-spacing:2px;color:rgba(255,255,255,.65);text-align:center;border:1px solid rgba(255,255,255,.12);padding:5px 14px;background:rgba(255,255,255,.02)}
 #ov-panels{display:flex;gap:12px;width:100%;max-width:720px}
 .ov-panel{flex:1;border:1px solid;padding:12px 16px}
 #ov-panel-you{border-color:rgba(0,207,255,.45);background:rgba(0,207,255,.04)}
 #ov-panel-echo{border-color:rgba(255,0,170,.45);background:rgba(255,0,170,.04)}
-.ov-panel-head{font-size:clamp(14px,1.4vw,17px);letter-spacing:4px;margin-bottom:6px;font-weight:bold}
+.ov-panel-head{font-size:clamp(12px,1.0vw,13px);letter-spacing:4px;margin-bottom:6px;font-weight:bold}
 #ov-panel-you .ov-panel-head{color:#00cfff}
 #ov-panel-echo .ov-panel-head{color:#ff00aa}
-.ov-panel-body{font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,.92);line-height:1.6;letter-spacing:.3px}
+.ov-panel-body{font-size:clamp(12px,0.95vw,13px);color:rgba(255,255,255,.88);line-height:1.6;letter-spacing:.3px}
 #ov-extras{max-width:720px;width:100%;border:1px solid rgba(255,255,255,.12);padding:10px 16px}
-.ov-extra-row{display:flex;align-items:baseline;gap:12px;font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,.90);letter-spacing:.5px;line-height:1.45}
+.ov-extra-row{display:flex;align-items:baseline;gap:12px;font-size:clamp(12px,0.95vw,13px);color:rgba(255,255,255,.88);letter-spacing:.5px;line-height:1.45}
 .ov-extra-row+.ov-extra-row{margin-top:6px}
 /* All badges: fixed width so descriptions align perfectly */
 .ov-badge{display:inline-block;width:76px;text-align:center;font-size:clamp(10px,1vw,12px);letter-spacing:2px;padding:3px 0;border-radius:2px;flex-shrink:0;white-space:nowrap;line-height:1.5;font-weight:bold}
@@ -92,14 +93,16 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .ov-badge.red{background:rgba(255,50,0,.12);color:#ff7744;border:1px solid rgba(255,60,0,.28)}
 .ov-badge.cyan{background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.2)}
 #username-wrap{width:100%;max-width:720px;text-align:center}
-#username-wrap label{display:block;font-size:clamp(13px,1.3vw,16px);letter-spacing:5px;color:rgba(255,255,255,.80);margin-bottom:6px}
-#username-input{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.25);color:#fff;font-family:'Courier New',monospace;font-size:clamp(16px,1.9vw,24px);letter-spacing:5px;padding:4px 8px;outline:none;text-align:center;width:260px;transition:border-color .2s;text-transform:uppercase}
+#username-wrap label{display:block;font-size:clamp(11px,0.9vw,12px);letter-spacing:5px;color:rgba(255,255,255,.72);margin-bottom:6px}
+#username-input{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.25);color:#fff;font-family:'Courier New',monospace;font-size:clamp(16px,1.6vw,20px);letter-spacing:5px;padding:4px 8px;outline:none;text-align:center;width:240px;transition:border-color .2s;text-transform:uppercase}
 #username-input:focus{border-bottom-color:rgba(0,207,255,.7)}
 #username-input::placeholder{color:rgba(255,255,255,.2);font-size:.7em;letter-spacing:3px;text-transform:none}
-#ov-hs{font-size:clamp(12px,1.3vw,16px);letter-spacing:4px;color:rgba(255,204,0,.7)}
-.ov-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:#ffffff;font-family:'Courier New',monospace;font-size:clamp(14px,1.5vw,20px);letter-spacing:7px;padding:13px 44px;cursor:pointer;transition:all .25s;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+#ov-hs{font-size:clamp(11px,1.0vw,13px);letter-spacing:4px;color:rgba(255,204,0,.8)}
+.ov-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:#ffffff;font-family:'Courier New',monospace;font-size:clamp(14px,1.2vw,17px);letter-spacing:7px;padding:12px 40px;cursor:pointer;transition:all .25s;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .ov-btn:hover{border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.06);letter-spacing:8px}
-#ov-hint{font-size:clamp(13px,1.3vw,16px);letter-spacing:1px;color:rgba(255,255,255,.72);text-align:center;line-height:2}
+#ov-hint{font-size:clamp(11px,0.9vw,12px);letter-spacing:1px;color:rgba(255,255,255,.65);text-align:center;line-height:2}
+/* ── START ZONE — visual grouping for best score / name / play button ── */
+#ov-start-zone{width:100%;max-width:720px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:16px 0 18px;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
 @media(max-width:600px){#ov-panels{flex-direction:column}}
 
 /* ── GAME OVER ── */
@@ -131,8 +134,8 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 /* ── D-PAD ── */
 .dp-btn{width:62px;height:62px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);font-size:22px;display:flex;align-items:center;justify-content:center;border-radius:8px;cursor:pointer;touch-action:none;-webkit-tap-highlight-color:transparent;user-select:none;transition:background .08s,border-color .08s}
 .dp-btn.active,.dp-btn:active{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5)}
-#dpad-lr{position:fixed;bottom:max(28px,env(safe-area-inset-bottom,0px) + 16px);left:max(28px,env(safe-area-inset-left,0px) + 16px);display:none;flex-direction:row;gap:5px;z-index:50}
-#dpad-ud{position:fixed;bottom:max(28px,env(safe-area-inset-bottom,0px) + 16px);right:max(28px,env(safe-area-inset-right,0px) + 16px);display:none;flex-direction:column;gap:5px;z-index:50}
+#dpad-lr{position:fixed;bottom:max(110px,env(safe-area-inset-bottom,0px) + 100px);left:max(22px,env(safe-area-inset-left,0px) + 16px);display:none;flex-direction:row;gap:5px;z-index:50}
+#dpad-ud{position:fixed;bottom:max(110px,env(safe-area-inset-bottom,0px) + 100px);right:max(22px,env(safe-area-inset-right,0px) + 16px);display:none;flex-direction:column;gap:5px;z-index:50}
 @media(pointer:coarse){#dpad-lr{display:flex}#dpad-ud{display:flex}}
 /* ── PORTRAIT WARNING ── */
 #portrait-warn{position:fixed;inset:0;z-index:999;background:#010112;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;padding:40px;pointer-events:none}
@@ -146,7 +149,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 <body>
 
 <div id="hud">
-  <div id="hud-you"><em>YOU</em><span id="val-score">0</span><div class="hud-pb">BEST<br><span id="val-pb">0</span></div></div>
+  <div id="hud-you"><em>YOU</em><span id="val-score">0</span><div class="hud-pb">BEST<br><span id="val-pb">0</span> <span id="val-rank"></span></div></div>
   <div id="hud-center">
     <div id="hud-dim">DIM <span id="val-level">1</span></div>
     <div id="hud-mode">MIRROR X</div>
@@ -181,16 +184,25 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
   <div id="ov-title">DUALITY</div>
   <div id="ov-sub">a quantum survival experience</div>
   <div id="ov-headphones">🎧 &nbsp;headphones recommended for the full experience</div>
-  <div id="ov-hs">BEST SCORE: <span id="ov-hs-val">0</span></div>
-  <div id="username-wrap">
-    <label for="username-input">YOUR CALLSIGN</label>
-    <input id="username-input" maxlength="16" placeholder="enter name" autocomplete="off" spellcheck="false">
+  <div id="ov-start-zone">
+    <div id="ov-hs">BEST SCORE: <span id="ov-hs-val">0</span></div>
+    <div id="username-wrap">
+      <label for="username-input">YOUR CALLSIGN</label>
+      <input id="username-input" maxlength="16" placeholder="enter name" autocomplete="off" spellcheck="false">
+    </div>
+    <button class="ov-btn" id="start-btn">ENTER THE RIFT</button>
   </div>
-  <button class="ov-btn" id="start-btn">ENTER THE RIFT</button>
   <div id="ov-panels">
     <div class="ov-panel" id="ov-panel-you">
       <div class="ov-panel-head">YOU — LEFT DIMENSION</div>
-      <div class="ov-panel-body">The pulsing cyan entity.<br>PC: WASD / arrow keys <span style="font-size:.75em;letter-spacing:2px;background:rgba(0,207,255,.15);color:#00cfff;border:1px solid rgba(0,207,255,.35);padding:1px 6px;border-radius:2px;vertical-align:middle">RECOMMENDED</span><br>Mobile: d-pad buttons</div>
+      <div class="ov-panel-body">
+        <div>The pulsing cyan entity.</div>
+        <div style="display:flex;align-items:center;gap:7px;flex-wrap:nowrap">
+          <span>PC: WASD / arrow keys</span>
+          <span style="font-size:10px;letter-spacing:1px;background:rgba(0,207,255,.15);color:#00cfff;border:1px solid rgba(0,207,255,.35);padding:1px 6px;border-radius:2px;white-space:nowrap;flex-shrink:0">RECOMMENDED</span>
+        </div>
+        <div>Mobile: d-pad buttons</div>
+      </div>
     </div>
     <div class="ov-panel" id="ov-panel-echo">
       <div class="ov-panel-head">ECHO — RIGHT DIMENSION</div>
@@ -1183,6 +1195,8 @@ function refreshHUD(){
   document.getElementById('val-streak').textContent='×'+streak;
   document.getElementById('val-level').textContent=level;
   document.getElementById('val-pb').textContent=highScore;
+  const rankEl=document.getElementById('val-rank');
+  if(rankEl)rankEl.textContent=myGlobalRank?'#'+myGlobalRank:'';
   const sw=document.getElementById('hud-streak-wrap');
   sw.style.color=streak>1?'#ffdd00':'rgba(255,220,0,.45)';
   sw.style.textShadow=streak>1?'0 0 18px rgba(255,200,0,.95)':'none';
@@ -1201,6 +1215,8 @@ const API_LB='/api/leaderboard';
 let globalLbData=null;
 let lbPollId=null;
 let lastSubmittedScore=0;
+let myGlobalRank=null;
+let lbTooLow=false;
 
 function lbLoad(){try{return JSON.parse(localStorage.getItem(LB_KEY)||'[]');}catch{return[];}}
 function lbSave(arr){localStorage.setItem(LB_KEY,JSON.stringify(arr));}
@@ -1217,13 +1233,17 @@ async function lbAdd(name,s){
   if(s<=0)return;
   try{
     const r=await fetch(API_LB,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name||'ANON',score:s})});
-    if(r.ok){globalLbData=await r.json();}
+    if(r.ok){
+      const data=await r.json();
+      if(data&&data.tooLow){lbTooLow=true;await lbFetch();}
+      else{lbTooLow=false;if(data&&data.lb){globalLbData=data.lb;if(data.myRank){myGlobalRank=data.myRank;refreshHUD();}}}
+    }
   }catch(e){}
 }
 async function lbFetch(){
   try{
     const r=await fetch(API_LB);
-    if(r.ok){globalLbData=await r.json();return true;}
+    if(r.ok){const d=await r.json();globalLbData=Array.isArray(d)?d:d.lb||[];return true;}
   }catch(e){}
   return false;
 }
@@ -1244,19 +1264,24 @@ function lbRender(myScore){
   list.innerHTML='';
   const top=arr.slice(0,10);
   if(top.length===0){list.innerHTML='<div class="lb-row"><span class="lb-name" style="color:rgba(255,255,255,.3);font-style:italic">no scores yet — be the first</span></div>';return;}
-  const myName=playerName||'ANON';
-  let myIdx=arr.findIndex(e=>e.score===myScore&&e.name===myName);
+  const myName=(playerName||'ANON').toUpperCase();
   top.forEach((e,i)=>{
+    const isMe=e.score===myScore&&e.name.toUpperCase()===myName;
     const row=document.createElement('div');
-    row.className='lb-row'+(e.score===myScore&&e.name===myName?' lb-me':'');
+    row.className='lb-row'+(isMe?' lb-me':'');
     row.innerHTML=`<span class="lb-rank">#${i+1}</span><span class="lb-name">${e.name.slice(0,12)}</span><span class="lb-score">${e.score}</span>`;
     list.appendChild(row);
   });
-  if(myIdx>=10){
+  if(isGlobal&&myGlobalRank!==null&&myGlobalRank>10){
     const row=document.createElement('div');row.className='lb-row lb-me';
-    const e=arr[myIdx];
-    row.innerHTML=`<span class="lb-rank">#${myIdx+1}</span><span class="lb-name">${e.name.slice(0,12)}</span><span class="lb-score">${e.score}</span>`;
+    row.innerHTML=`<span class="lb-rank">#${myGlobalRank}</span><span class="lb-name">${myName.slice(0,12)}</span><span class="lb-score">${myScore}</span>`;
     list.appendChild(row);
+  }
+  if(lbTooLow){
+    const note=document.createElement('div');
+    note.style.cssText='color:rgba(255,100,0,.65);font-style:italic;font-size:.82em;text-align:center;padding:7px 0 2px;letter-spacing:.5px;border-top:1px solid rgba(255,255,255,.06);margin-top:4px';
+    note.textContent='the global leaderboard is full. your score didn\'t make the cut. the void is unsurprised.';
+    list.appendChild(note);
   }
 }
 const MODE_NAMES={MIRROR_X:'MIRROR X',MIRROR_Y:'MIRROR Y',MIRROR_180:'MIRROR 180°',MIRROR_OPPOSITE:'FULL INVERSION',DELAYED:'DELAYED',SWAP:'SWAP'};
@@ -1341,7 +1366,7 @@ function winLevel(){
   // Streak pulse animation
   const sw=document.getElementById('hud-streak-wrap');
   sw.classList.remove('streak-pulse');void sw.offsetWidth;sw.classList.add('streak-pulse');
-  showMsg(streak>3?pickMsg('streak'):pickMsg('win'),4500);
+  showMsg(streak>3?pickMsg('streak'):pickMsg('win'),7500);
   refreshHUD();updateHS();
   spottedWrap.style.display='none';wasSpottedFrac=0;
   setTimeout(()=>{
