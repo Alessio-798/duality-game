@@ -20,7 +20,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 #hud-you{font-size:clamp(26px,3.2vw,38px);letter-spacing:3px;color:#00cfff;text-shadow:0 0 16px #00cfff;line-height:1.3;font-weight:bold}
 #hud-you em{font-style:normal;opacity:.88;font-size:.6em;letter-spacing:5px;display:block;margin-bottom:1px;font-weight:bold}
 .hud-pb{font-size:clamp(11px,1.1vw,14px);letter-spacing:3px;color:rgba(255,200,0,.7);margin-top:3px;text-shadow:none;line-height:1.3}
-#val-rank{font-size:.75em;opacity:.65;letter-spacing:2px}
+#val-rank,.rank-tag{font-size:.75em;opacity:.65;letter-spacing:2px}
 #hud-center{position:absolute;left:50%;transform:translateX(-50%);text-align:center}
 #hud-dim{font-size:clamp(19px,2.3vw,26px);letter-spacing:6px;color:rgba(255,255,255,.85);text-shadow:0 0 10px rgba(255,255,255,.4);font-weight:bold}
 #hud-mode{font-size:clamp(13px,1.5vw,17px);letter-spacing:4px;color:rgba(200,160,255,.7);margin-top:3px}
@@ -187,7 +187,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
   <div id="ov-sub">a quantum survival experience</div>
   <div id="ov-headphones">🎧 &nbsp;headphones recommended for the full experience</div>
   <div id="ov-start-zone">
-    <div id="ov-hs">BEST SCORE: <span id="ov-hs-val">0</span></div>
+    <div id="ov-hs">BEST SCORE: <span id="ov-hs-val">0</span> <span class="rank-tag" id="ov-rank"></span></div>
     <div id="username-wrap">
       <label for="username-input">YOUR CALLSIGN</label>
       <input id="username-input" maxlength="16" placeholder="enter name" autocomplete="off" spellcheck="false">
@@ -222,7 +222,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 <div id="gameover">
   <div id="go-title">CAPTURED</div>
   <div id="go-score">SCORE: <span id="val-final">0</span></div>
-  <div id="go-hs">BEST: <span id="go-hs-val">0</span></div>
+  <div id="go-hs">BEST: <span id="go-hs-val">0</span> <span class="rank-tag" id="go-rank"></span></div>
   <div id="go-msg"></div>
   <div id="go-lb">
     <div id="go-lb-title">LEADERBOARD</div>
@@ -251,7 +251,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 // ═══ CONFIG ═══════════════════════════════════════════════════════════════════
 const ZW=7.0,ZH=6.5,SPD=5.0,HIT_R=0.72;
 const PORT_Z=-ZH+2.2,SAFE_R=4.0,SPOTTED_MAX=70,GRACE_DUR=1.2;
-const HS_KEY='duality_hs_v4';
+const HS_KEY='duality_hs_v4',RANK_KEY='duality_rank_v1';
 
 // ═══ VIBE JAM WEBRING — URL params ═══════════════════════════════════════════
 const _vjP=new URLSearchParams(window.location.search);
@@ -1204,8 +1204,7 @@ function refreshHUD(){
   document.getElementById('val-streak').textContent='×'+streak;
   document.getElementById('val-level').textContent=level;
   document.getElementById('val-pb').textContent=highScore;
-  const rankEl=document.getElementById('val-rank');
-  if(rankEl)rankEl.textContent=myGlobalRank?'#'+myGlobalRank:'';
+  refreshRankDisplays();
   const sw=document.getElementById('hud-streak-wrap');
   sw.style.color=streak>1?'#ffdd00':'rgba(255,220,0,.45)';
   sw.style.textShadow=streak>1?'0 0 18px rgba(255,200,0,.95)':'none';
@@ -1224,7 +1223,13 @@ const API_LB='/api/leaderboard';
 let globalLbData=null;
 let lbPollId=null;
 let lastSubmittedScore=0;
-let myGlobalRank=null;
+let myGlobalRank=parseInt(localStorage.getItem(RANK_KEY)||'0')||null;
+function refreshRankDisplays(){
+  const t=myGlobalRank?'#'+myGlobalRank:'';
+  document.getElementById('val-rank').textContent=t;
+  document.getElementById('ov-rank').textContent=t;
+  document.getElementById('go-rank').textContent=t;
+}
 let lbTooLow=false;
 
 function lbLoad(){try{return JSON.parse(localStorage.getItem(LB_KEY)||'[]');}catch{return[];}}
@@ -1245,7 +1250,7 @@ async function lbAdd(name,s){
     if(r.ok){
       const data=await r.json();
       if(data&&data.tooLow){lbTooLow=true;await lbFetch();}
-      else{lbTooLow=false;if(data&&data.lb){globalLbData=data.lb;if(data.myRank){myGlobalRank=data.myRank;refreshHUD();}}}
+      else{lbTooLow=false;if(data&&data.lb){globalLbData=data.lb;if(data.myRank){myGlobalRank=data.myRank;localStorage.setItem(RANK_KEY,myGlobalRank);refreshHUD();refreshRankDisplays();}}}
     }
   }catch(e){}
 }
@@ -1592,6 +1597,7 @@ document.getElementById('retry-btn').addEventListener('click',()=>{
 });
 document.getElementById('ov-hs-val').textContent=highScore;
 document.getElementById('val-pb').textContent=highScore;
+refreshRankDisplays();
 refreshLives();
 
 // Auto-start when arriving from Vibe Jam portal — skip intro screen
