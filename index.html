@@ -1222,6 +1222,7 @@ let globalLbData=null;
 let lbPollId=null;
 let lastSubmittedScore=0;
 let myGlobalRank=parseInt(localStorage.getItem(RANK_KEY)||'0')||null;
+let currentRunRank=null;
 function refreshRankDisplays(){
   const t=myGlobalRank?'#'+myGlobalRank:'';
   document.getElementById('ov-rank').textContent=t;
@@ -1253,7 +1254,7 @@ async function lbAdd(name,s){
     if(r.ok){
       const data=await r.json();
       if(data&&data.tooLow){lbTooLow=true;await lbFetch();}
-      else{lbTooLow=false;if(data&&data.lb){globalLbData=data.lb;if(data.myRank&&s>=highScore){myGlobalRank=data.myRank;localStorage.setItem(RANK_KEY,myGlobalRank);refreshPB();refreshRankDisplays();}}}
+      else{lbTooLow=false;if(data&&data.lb){globalLbData=data.lb;if(data.myRank){currentRunRank=data.myRank;if(s>=highScore){myGlobalRank=data.myRank;localStorage.setItem(RANK_KEY,myGlobalRank);refreshPB();refreshRankDisplays();}}}}
     }
   }catch(e){}
 }
@@ -1289,9 +1290,9 @@ function lbRender(myScore){
     row.innerHTML=`<span class="lb-rank">#${i+1}</span><span class="lb-name">${e.name.slice(0,12)}</span><span class="lb-score">${e.score}</span>`;
     list.appendChild(row);
   });
-  if(isGlobal&&myGlobalRank!==null&&myGlobalRank>10){
+  if(isGlobal&&currentRunRank!==null&&currentRunRank>10){
     const row=document.createElement('div');row.className='lb-row lb-me';
-    row.innerHTML=`<span class="lb-rank">#${myGlobalRank}</span><span class="lb-name">${myName.slice(0,12)}</span><span class="lb-score">${myScore}</span>`;
+    row.innerHTML=`<span class="lb-rank">#${currentRunRank}</span><span class="lb-name">${myName.slice(0,12)}</span><span class="lb-score">${myScore}</span>`;
     list.appendChild(row);
   }
   if(lbTooLow){
