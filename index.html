@@ -1161,7 +1161,7 @@ const scorePopEl=document.getElementById('score-popup');
 const readyPrompt=document.getElementById('ready-prompt');
 let msgTO=null,popTO=null;
 
-function showMsg(text,dur=4200){
+function showMsg(text,dur=5000){
   msgEl.textContent=text;msgEl.style.opacity='1';clearTimeout(msgTO);
   msgTO=setTimeout(()=>msgEl.style.opacity='0',dur);
 }
