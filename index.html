@@ -106,6 +106,8 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 @media(max-width:600px){#ov-panels{flex-direction:column}}
 
 /* ── GAME OVER ── */
+#vj-portal-link{display:none;margin-top:14px;font-size:clamp(11px,1.1vw,13px);letter-spacing:5px;color:rgba(180,130,255,.55);border:1px solid rgba(180,130,255,.2);padding:8px 22px;text-decoration:none;transition:color .2s,border-color .2s;font-family:'Courier New',monospace}
+#vj-portal-link:hover{color:rgba(210,170,255,.9);border-color:rgba(180,130,255,.5)}
 #gameover{position:fixed;inset:0;z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(1,1,18,.95)}
 #go-title{font-size:clamp(32px,6.5vw,70px);letter-spacing:12px;color:#ff1a33;text-shadow:0 0 40px #ff1a3366;margin-bottom:10px;font-weight:bold}
 #go-score{font-size:clamp(17px,2.1vw,26px);letter-spacing:4px;color:rgba(255,255,255,.55);margin-bottom:4px}
@@ -227,6 +229,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
     <div id="go-lb-list"></div>
   </div>
   <button class="ov-btn" id="retry-btn">TRY AGAIN</button>
+  <a id="vj-portal-link" href="#" target="_blank">→ VIBE JAM WEBRING</a>
 </div>
 
 <div id="dpad-lr">
@@ -249,6 +252,12 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 const ZW=7.0,ZH=6.5,SPD=5.0,HIT_R=0.72;
 const PORT_Z=-ZH+2.2,SAFE_R=4.0,SPOTTED_MAX=70,GRACE_DUR=1.2;
 const HS_KEY='duality_hs_v4';
+
+// ═══ VIBE JAM WEBRING — URL params ═══════════════════════════════════════════
+const _vjP=new URLSearchParams(window.location.search);
+const vjFromPortal=_vjP.get('portal')==='true';
+const vjRef=_vjP.get('ref')||'';
+const vjInUser=(_vjP.get('username')||'').toUpperCase().slice(0,16);
 
 // ═══ MESSAGES ════════════════════════════════════════════════════════════════
 let playerName='';
@@ -1251,7 +1260,7 @@ function lbStartPoll(myScore){
   lbStopPoll();
   lbPollId=setInterval(async()=>{
     if(await lbFetch())lbRender(myScore);
-  },15000);
+  },300000);
 }
 function lbStopPoll(){if(lbPollId){clearInterval(lbPollId);lbPollId=null;}}
 function lbRender(myScore){
@@ -1353,6 +1362,10 @@ function die(){
       document.getElementById('go-msg').textContent=dm;
       lbRender(finalScore);
       document.getElementById('gameover').style.display='flex';
+      const _vjLink=document.getElementById('vj-portal-link');
+      const _vjQ=new URLSearchParams();if(playerName)_vjQ.set('username',playerName);
+      _vjQ.set('color','00cfff');_vjQ.set('ref',window.location.host);
+      _vjLink.href='https://vibejam.cc/portal/2026?'+_vjQ.toString();_vjLink.style.display='block';
       lbStartPoll(finalScore);
       score=0;lives=3;level=1;streak=1;
     }else{startLevel();}
@@ -1580,6 +1593,13 @@ document.getElementById('retry-btn').addEventListener('click',()=>{
 document.getElementById('ov-hs-val').textContent=highScore;
 document.getElementById('val-pb').textContent=highScore;
 refreshLives();
+
+// Auto-start when arriving from Vibe Jam portal — skip intro screen
+if(vjFromPortal){
+  playerName=vjInUser||'TRAVELER';
+  document.getElementById('overlay').style.display='none';
+  score=0;lives=3;level=1;streak=1;refreshLives();startLevel();
+}
 
 // ═══ RENDER LOOP ══════════════════════════════════════════════════════════════
 const clock=new THREE.Clock();
