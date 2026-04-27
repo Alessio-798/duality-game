@@ -1233,6 +1233,8 @@ function refreshRankDisplays(){
 }
 function liveRank(s){
   if(!globalLbData||!globalLbData.length)return myGlobalRank;
+  const minTop=globalLbData[globalLbData.length-1].score;
+  if(s<minTop)return myGlobalRank;
   return globalLbData.filter(e=>e.score>=s).length+1;
 }
 let lbTooLow=false;
