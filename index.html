@@ -721,7 +721,7 @@ function removePortals(){
   portalShaderUnis.length=0;
 }
 function portalPositions(m){
-  return(m==='MIRROR_Y'||m==='MIRROR_180')?{lz:PORT_Z,rz:-PORT_Z}:{lz:PORT_Z,rz:PORT_Z};
+  return(m==='MIRROR_Y'||m==='MIRROR_180'||m==='MIRROR_OPPOSITE')?{lz:PORT_Z,rz:-PORT_Z}:{lz:PORT_Z,rz:PORT_Z};
 }
 
 // ═══ STARS — bright gems, clearly positive ════════════════════════════════════
