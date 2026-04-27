@@ -1596,7 +1596,7 @@ document.getElementById('start-btn').addEventListener('click',()=>{
   score=0;lives=3;level=1;streak=1;refreshLives();startLevel();
 });
 document.getElementById('retry-btn').addEventListener('click',()=>{
-  lbStopPoll();globalLbData=null;
+  lbStopPoll();
   document.getElementById('gameover').style.display='none';
   score=0;lives=3;level=1;streak=1;refreshLives();startLevel();
 });
@@ -1604,6 +1604,7 @@ document.getElementById('ov-hs-val').textContent=highScore;
 document.getElementById('val-pb').textContent=highScore;
 refreshRankDisplays();
 refreshLives();
+lbFetch();
 
 // Auto-start when arriving from Vibe Jam portal — skip intro screen
 if(vjFromPortal){
