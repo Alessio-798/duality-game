@@ -1203,10 +1203,6 @@ function refreshHUD(){
   document.getElementById('val-score').textContent=score;
   document.getElementById('val-streak').textContent='×'+streak;
   document.getElementById('val-level').textContent=level;
-  document.getElementById('val-pb').textContent=highScore;
-  refreshRankDisplays();
-  const r=score>0?liveRank(score):myGlobalRank;
-  document.getElementById('val-rank').textContent=r?'#'+r:'';
   const sw=document.getElementById('hud-streak-wrap');
   sw.style.color=streak>1?'#ffdd00':'rgba(255,220,0,.45)';
   sw.style.textShadow=streak>1?'0 0 18px rgba(255,200,0,.95)':'none';
@@ -1234,7 +1230,7 @@ function refreshRankDisplays(){
 function liveRank(s){
   if(!globalLbData||!globalLbData.length)return myGlobalRank;
   const minTop=globalLbData[globalLbData.length-1].score;
-  if(s<minTop)return myGlobalRank;
+  if(s<minTop)return null;
   return globalLbData.filter(e=>e.score>=s).length+1;
 }
 let lbTooLow=false;
@@ -1257,7 +1253,7 @@ async function lbAdd(name,s){
     if(r.ok){
       const data=await r.json();
       if(data&&data.tooLow){lbTooLow=true;await lbFetch();}
-      else{lbTooLow=false;if(data&&data.lb){globalLbData=data.lb;if(data.myRank&&s>=highScore){myGlobalRank=data.myRank;localStorage.setItem(RANK_KEY,myGlobalRank);refreshHUD();refreshRankDisplays();}}}
+      else{lbTooLow=false;if(data&&data.lb){globalLbData=data.lb;if(data.myRank&&s>=highScore){myGlobalRank=data.myRank;localStorage.setItem(RANK_KEY,myGlobalRank);refreshPB();refreshRankDisplays();}}}
     }
   }catch(e){}
 }
@@ -1317,7 +1313,10 @@ function showIntroLabels(){
 }
 function updateHS(){
   if(score>highScore){highScore=score;localStorage.setItem(HS_KEY,highScore);}
+}
+function refreshPB(){
   document.getElementById('val-pb').textContent=highScore;
+  document.getElementById('val-rank').textContent=myGlobalRank?'#'+myGlobalRank:'';
 }
 
 // ═══ BOUNDS ═══════════════════════════════════════════════════════════════════
@@ -1595,15 +1594,15 @@ document.getElementById('start-btn').addEventListener('click',()=>{
   playerName=raw||'';
   document.getElementById('overlay').style.display='none';
   try{ensureAudio();}catch(e){}
-  score=0;lives=3;level=1;streak=1;refreshLives();startLevel();
+  score=0;lives=3;level=1;streak=1;refreshPB();refreshLives();startLevel();
 });
 document.getElementById('retry-btn').addEventListener('click',()=>{
   lbStopPoll();
   document.getElementById('gameover').style.display='none';
-  score=0;lives=3;level=1;streak=1;refreshLives();startLevel();
+  score=0;lives=3;level=1;streak=1;refreshPB();refreshLives();startLevel();
 });
 document.getElementById('ov-hs-val').textContent=highScore;
-document.getElementById('val-pb').textContent=highScore;
+refreshPB();
 refreshRankDisplays();
 refreshLives();
 lbFetch();
