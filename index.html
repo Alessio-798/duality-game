@@ -1205,6 +1205,8 @@ function refreshHUD(){
   document.getElementById('val-level').textContent=level;
   document.getElementById('val-pb').textContent=highScore;
   refreshRankDisplays();
+  const r=score>0?liveRank(score):myGlobalRank;
+  document.getElementById('val-rank').textContent=r?'#'+r:'';
   const sw=document.getElementById('hud-streak-wrap');
   sw.style.color=streak>1?'#ffdd00':'rgba(255,220,0,.45)';
   sw.style.textShadow=streak>1?'0 0 18px rgba(255,200,0,.95)':'none';
@@ -1226,9 +1228,12 @@ let lastSubmittedScore=0;
 let myGlobalRank=parseInt(localStorage.getItem(RANK_KEY)||'0')||null;
 function refreshRankDisplays(){
   const t=myGlobalRank?'#'+myGlobalRank:'';
-  document.getElementById('val-rank').textContent=t;
   document.getElementById('ov-rank').textContent=t;
   document.getElementById('go-rank').textContent=t;
+}
+function liveRank(s){
+  if(!globalLbData||!globalLbData.length)return myGlobalRank;
+  return globalLbData.filter(e=>e.score>=s).length+1;
 }
 let lbTooLow=false;
 
