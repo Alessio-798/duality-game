@@ -109,7 +109,9 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 #vj-links{margin-top:10px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 #vj-portal-link,#vj-return-link{display:none;font-size:clamp(11px,1.1vw,13px);letter-spacing:5px;color:rgba(180,130,255,.55);border:1px solid rgba(180,130,255,.2);padding:7px 18px;text-decoration:none;transition:color .2s,border-color .2s;font-family:'Courier New',monospace}
 #vj-portal-link:hover,#vj-return-link:hover{color:rgba(210,170,255,.9);border-color:rgba(180,130,255,.5)}
-#gameover{position:fixed;inset:0;z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(1,1,18,.95)}
+#gameover{position:fixed;inset:0;z-index:200;display:none;flex-direction:column;align-items:center;background:rgba(1,1,18,.95);overflow-y:auto;overflow-x:hidden;scrollbar-width:none;padding:20px 28px;gap:4px}
+#gameover::-webkit-scrollbar{display:none}
+#gameover::before,#gameover::after{content:'';flex:1;min-height:8px}
 #go-title{font-size:clamp(26px,5vw,58px);letter-spacing:12px;color:#ff1a33;text-shadow:0 0 40px #ff1a3366;margin-bottom:6px;font-weight:bold}
 #go-score{font-size:clamp(15px,1.8vw,22px);letter-spacing:4px;color:rgba(255,255,255,.55);margin-bottom:2px}
 #go-hs{font-size:clamp(13px,1.5vw,19px);letter-spacing:3px;color:rgba(255,200,0,.65);margin-bottom:12px}
